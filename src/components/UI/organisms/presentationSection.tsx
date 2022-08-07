@@ -6,6 +6,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Fade,
 } from '@mui/material';
 import {
   Calculate,
@@ -16,6 +17,14 @@ import {
 // @ts-ignore
 import profilPhoto from '../../../assets/photo/profil.jpg';
 import { ListItemType } from '../../../types/presentationSectionTypes';
+import {
+  mainBoxStyle,
+  photoBoxStyle,
+  photoStyle,
+  descriptionBoxStyle,
+  mainTextStyle,
+  listItemTextStyle,
+} from '../../../styles/presentationSectionStyles';
 
 const mainText: Array<string> = [
   'Augustin de Laubier - 22 ans',
@@ -43,53 +52,53 @@ const listItems: Array<ListItemType> = [
   },
 ];
 
+const photoAlternative = 'Photo de profil';
+const fadeInTimeOut = 2000;
+
 function PresentationSection(): JSX.Element {
   return (
-    <Box sx={{
-      display: 'flex',
-      height: '90vh',
-      width: '100vw',
-      flexDirection: 'row',
-    }}
+    <Fade
+      in
+      timeout={fadeInTimeOut}
     >
-      <img
-        src={profilPhoto}
-        alt="Profil"
-        style={{
-          height: '60%',
-          borderRadius: 50,
-          marginLeft: '5%',
-          marginTop: '10%',
-        }}
-      />
-      <Box sx={{
-        marginTop: '10%',
-        marginLeft: '5%',
-        flexDirection: 'column',
-      }}
-      >
-        {mainText.map((textItem) => (
-          <Typography variant="h6" sx={{ fontFamily: 'Avenir', lineHeight: 2 }}>{textItem}</Typography>
-        ))}
-        <List>
-          {
-            listItems.map((listItem) => (
-              <ListItem>
-                <ListItemIcon>
-                  {listItem.itemIcon}
-                </ListItemIcon>
-                <ListItemText
-                  primaryTypographyProps={{ fontFamily: 'Avenir' }}
-                  secondaryTypographyProps={{ fontFamily: 'Avenir' }}
-                  primary={listItem.primaryText}
-                  secondary={listItem.secondaryText ?? null}
-                />
-              </ListItem>
-            ))
-          }
-        </List>
+      <Box sx={mainBoxStyle}>
+        <Box sx={photoBoxStyle}>
+          <img
+            src={profilPhoto}
+            alt={photoAlternative}
+            style={photoStyle}
+          />
+        </Box>
+        <Box sx={descriptionBoxStyle}>
+          {mainText.map((textItem) => (
+            <Typography
+              variant="h6"
+              sx={mainTextStyle}
+              key={textItem}
+            >
+              {textItem}
+            </Typography>
+          ))}
+          <List>
+            {
+              listItems.map((listItem) => (
+                <ListItem key={listItem.primaryText}>
+                  <ListItemIcon>
+                    {listItem.itemIcon}
+                  </ListItemIcon>
+                  <ListItemText
+                    primaryTypographyProps={listItemTextStyle}
+                    secondaryTypographyProps={listItemTextStyle}
+                    primary={listItem.primaryText}
+                    secondary={listItem.secondaryText ?? null}
+                  />
+                </ListItem>
+              ))
+            }
+          </List>
+        </Box>
       </Box>
-    </Box>
+    </Fade>
   );
 }
 
