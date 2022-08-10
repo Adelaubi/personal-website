@@ -8,12 +8,61 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@mui/material';
-import WebIcon from '@mui/icons-material/Web';
-import StorageIcon from '@mui/icons-material/Storage';
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import PsychologyIcon from '@mui/icons-material/Psychology';
-import CodeIcon from '@mui/icons-material/Code';
+import {
+  Web,
+  Storage,
+  ShoppingCartCheckout,
+  GitHub,
+  Psychology,
+  Code,
+} from '@mui/icons-material';
+import { experienceType } from '../../../types/experienceProjectSectionTypes';
+
+const experiences: Array<experienceType> = [{
+  title: 'Stage Artisan Web - Coddity',
+  titleLink: 'https://coddity.com',
+  content: [
+    'Réalisation d\'une période de stage de 6 mois en tant que développeur full-stack. J\'ai pu travailler sur la plateforme Danil qui permet le monitoring de chatbots au travers de KPIs. Ce travail s\'est effectué aussi bien sur le côté Frontend(React Typescript) que Backend(AWS/Python). J\'ai également pu implémenter avec un autre développeur la totalité ',
+    'site commercial',
+    ' de Danil avec Svelte Typescript.',
+  ],
+  contentLink: 'https://danil.io',
+  tasks: [{
+    primary: 'Danil - Frontend',
+    secondary: 'Réalisation de features et de fixes, tests E2E et unitaires',
+    icon: <Web sx={{ color: 'white' }} />,
+  }, {
+    primary: 'Danil - Backend',
+    secondary: 'Réalisation de features et de fixes, tests unitaires',
+    icon: <Storage sx={{ color: 'white' }} />,
+  }, {
+    primary: 'Danil - Site commercial',
+    secondary: 'Réalisation de l\'architecture et des fonctionnalités, gestion du projet (Git, ...)',
+    icon: <ShoppingCartCheckout sx={{ color: 'white' }} />,
+  }],
+}, {
+  title: 'Projet Universitaire - Dérives',
+  titleLink: 'https://derives.utc.fr',
+  content: [
+    'Réalisation et publication sur Google Play et Apple Store d\'une application mobile, dans le cadre d\'un enseignement universitaire. Celle-ci consiste en la génération de poèmes en fonction de l\'envirronnement de l\'utilisateur. Ce projet a été réalisé avec une équipe d\'enseignant.e.s et d\'étudiant.e.s aussi bien dans sa conception que son implémentation. L\'ensemble du code est disponible ',
+    'ci-contre',
+    ', celui-ci a été réalisé avec React Native Expo, en Javascript.',
+  ],
+  contentLink: 'https://github.com/anto2oo/Derives',
+  tasks: [{
+    primary: 'Gestion du projet',
+    secondary: 'Maintien du Github, Méthode Agile SCRUM avec Trello',
+    icon: <GitHub sx={{ color: 'white' }} />,
+  }, {
+    primary: 'Conception de l\'application',
+    secondary: 'Expérience utilisateur, Ajout de fonctionnalités',
+    icon: <Psychology sx={{ color: 'white' }} />,
+  }, {
+    primary: 'Implémentation de l\'application',
+    secondary: 'Réalisation des fonctionnalités et des fixes',
+    icon: <Code sx={{ color: 'white' }} />,
+  }],
+}];
 
 function ExperienceProjectSection(): JSX.Element {
   return (
@@ -37,186 +86,79 @@ function ExperienceProjectSection(): JSX.Element {
       <Box sx={{
         display: 'flex',
         flexDirection: 'row',
-        marginTop: '5vh',
+        marginTop: '3vh',
       }}
       >
-        <Box sx={{
-          flexDirection: 'column',
-          width: '50vw',
-        }}
-        >
-          <Link
-            href="https://coddity.com"
-            variant="h4"
-            sx={{
-              fontFamily: 'Avenir',
-              color: 'white',
-              marginLeft: '6vh',
+        {
+          experiences.map((experience) => (
+            <Box sx={{
+              flexDirection: 'column',
+              width: '50vw',
             }}
-          >
-            Stage Artisan Web - Coddity
-          </Link>
-          <Typography sx={{
-            fontFamily: 'Avenir',
-            color: 'white',
-            marginLeft: '6vh',
-            marginTop: '2vh',
-          }}
-          >
-            {/* eslint-disable-next-line max-len */}
-            Réalisation d&apos;une période de stage de 6 mois en tant que développeur full-stack. J&apos;ai pu travailler sur la plateforme Danil qui permet le monitoring de chatbots au travers de KPIs. Ce travail s&apos;est effectué aussi bien sur le côté Frontend(React Typescript) que Backend(AWS/Python). J&apos;ai également pu implémenter avec un autre développeur la totalité
-            {' '}
-            <a
-              href="https://danil.io"
-              style={{
-                color: 'gray',
-              }}
             >
-              site commercial
-            </a>
-            {' '}
-            de Danil avec Svelte Typescript.
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              fontFamily: 'Avenir',
-              color: 'white',
-              marginLeft: '6vh',
-              marginTop: '2vh',
-            }}
-          >
-            Tâches réalisées :
-          </Typography>
-          <List sx={{
-            marginLeft: '7vh',
-          }}
-          >
-            <ListItem>
-              <ListItemIcon>
-                <WebIcon sx={{ color: 'white' }} />
-              </ListItemIcon>
-              <ListItemText
-                primaryTypographyProps={{ fontFamily: 'Avenir', color: 'white' }}
-                secondaryTypographyProps={{ fontFamily: 'Avenir', color: 'gray' }}
-                primary="Danil - Frontend"
-                secondary="Réalisation de features et de fixes, tests E2E et unitaires"
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <StorageIcon sx={{ color: 'white' }} />
-              </ListItemIcon>
-              <ListItemText
-                primaryTypographyProps={{ fontFamily: 'Avenir', color: 'white' }}
-                secondaryTypographyProps={{ fontFamily: 'Avenir', color: 'gray' }}
-                primary="Danil - Backend"
-                secondary="Réalisation de features et de fixes, tests unitaires"
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <ShoppingCartCheckoutIcon sx={{ color: 'white' }} />
-              </ListItemIcon>
-              <ListItemText
-                primaryTypographyProps={{ fontFamily: 'Avenir', color: 'white' }}
-                secondaryTypographyProps={{ fontFamily: 'Avenir', color: 'gray' }}
-                primary="Danil - Site Commercial"
-                secondary="Réalisation de l'architecture et des fonctionnalités, gestion du projet (Git, ...)"
-              />
-            </ListItem>
-          </List>
-        </Box>
-        <Box sx={{
-          flexDirection: 'column',
-          width: '50vw',
-          marginLeft: '6vh',
-        }}
-        >
-          <Link
-            href="https://derives.utc.fr"
-            variant="h4"
-            sx={{
-              fontFamily: 'Avenir',
-              color: 'white',
-              marginLeft: '6vh',
-              marginRight: '2vh',
-            }}
-          >
-            Projet Universitaire - Dérives
-          </Link>
-          <Typography sx={{
-            fontFamily: 'Avenir',
-            color: 'white',
-            marginLeft: '6vh',
-            marginRight: '2vh',
-            marginTop: '2vh',
-          }}
-          >
-            {/* eslint-disable-next-line max-len */}
-            Réalisation et publication sur Google Play et Apple Store d&apos;une application mobile, dans le cadre d&apos;un enseignement universitaire. Celle-ci consiste en la génération de poèmes en fonction de l&apos;envirronnement de l&apos;utilisateur. Ce projet a été réalisé avec une équipe d&apos;enseignant.e.s et d&apos;étudiant.e.s aussi bien dans sa conception que son implémentation. L&apos;ensemble du code est disponible
-            {' '}
-            <a
-              href="https://github.com/anto2oo/Derives"
-              style={{
-                color: 'gray',
+              <Link
+                href={experience.titleLink}
+                variant="h4"
+                sx={{
+                  fontFamily: 'Avenir',
+                  color: 'white',
+                  marginLeft: '6vh',
+                }}
+              >
+                {experience.title}
+              </Link>
+              <Typography sx={{
+                fontFamily: 'Avenir',
+                color: 'white',
+                marginLeft: '6vh',
+                marginTop: '2vh',
               }}
-            >
-              ci-contre
-            </a>
-            {' '}
-            , celui-ci a été réalisé avec React Native Expo, en Javascript.
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              fontFamily: 'Avenir',
-              color: 'white',
-              marginLeft: '6vh',
-              marginTop: '2vh',
-            }}
-          >
-            Tâches réalisées :
-          </Typography>
-          <List sx={{
-            marginLeft: '7vh',
-          }}
-          >
-            <ListItem>
-              <ListItemIcon>
-                <GitHubIcon sx={{ color: 'white' }} />
-              </ListItemIcon>
-              <ListItemText
-                primaryTypographyProps={{ fontFamily: 'Avenir', color: 'white' }}
-                secondaryTypographyProps={{ fontFamily: 'Avenir', color: 'gray' }}
-                primary="Gestion du projet"
-                secondary="Maintien du Github, Méthode Agile SCRUM avec Trello "
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <PsychologyIcon sx={{ color: 'white' }} />
-              </ListItemIcon>
-              <ListItemText
-                primaryTypographyProps={{ fontFamily: 'Avenir', color: 'white' }}
-                secondaryTypographyProps={{ fontFamily: 'Avenir', color: 'gray' }}
-                primary="Conception de l'application"
-                secondary="Expérience utilisateur, Ajout de fonctionnalités"
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <CodeIcon sx={{ color: 'white' }} />
-              </ListItemIcon>
-              <ListItemText
-                primaryTypographyProps={{ fontFamily: 'Avenir', color: 'white' }}
-                secondaryTypographyProps={{ fontFamily: 'Avenir', color: 'gray' }}
-                primary="Implémentation de l'application"
-                secondary="Réalisation des fonctionnalités et des fixes"
-              />
-            </ListItem>
-          </List>
-        </Box>
+              >
+                {/* eslint-disable-next-line max-len */}
+                {experience.content[0]}
+                {' '}
+                <a
+                  href={experience.contentLink}
+                  style={{
+                    color: 'gray',
+                  }}
+                >
+                  {experience.content[1]}
+                </a>
+                {experience.content[2]}
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontFamily: 'Avenir',
+                  color: 'white',
+                  marginLeft: '6vh',
+                  marginTop: '2vh',
+                }}
+              >
+                Tâches réalisées :
+              </Typography>
+              <List sx={{
+                marginLeft: '7vh',
+              }}
+              >
+                {experience.tasks.map((task) => (
+                  <ListItem>
+                    <ListItemIcon>
+                      {task.icon}
+                    </ListItemIcon>
+                    <ListItemText
+                      primaryTypographyProps={{ fontFamily: 'Avenir', color: 'white' }}
+                      secondaryTypographyProps={{ fontFamily: 'Avenir', color: 'gray' }}
+                      primary={task.primary}
+                      secondary={task.secondary}
+                    />
+                  </ListItem>
+                ))}
+              </List>
+            </Box>
+          ))
+        }
       </Box>
     </Box>
   );
