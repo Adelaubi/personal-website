@@ -18,7 +18,6 @@ import {
   Code,
 } from '@mui/icons-material';
 import {
-  taskItemIconStyle,
   mainContainerStyle,
   mainTitleStyle,
   experiencesContainerStyle,
@@ -45,15 +44,15 @@ const experiences: Array<experienceType> = [{
   tasks: [{
     primary: 'Danil - Frontend',
     secondary: 'Réalisation de features et de fixes, tests E2E et unitaires',
-    icon: <Web sx={taskItemIconStyle} />,
+    icon: <Web />,
   }, {
     primary: 'Danil - Backend',
     secondary: 'Réalisation de features et de fixes, tests unitaires',
-    icon: <Storage sx={taskItemIconStyle} />,
+    icon: <Storage />,
   }, {
     primary: 'Danil - Site commercial',
     secondary: 'Réalisation de l\'architecture et des fonctionnalités, gestion du projet (Git, ...)',
-    icon: <ShoppingCartCheckout sx={taskItemIconStyle} />,
+    icon: <ShoppingCartCheckout />,
   }],
 }, {
   title: 'Projet Universitaire - Dérives',
@@ -67,19 +66,19 @@ const experiences: Array<experienceType> = [{
   tasks: [{
     primary: 'Gestion du projet',
     secondary: 'Maintien du Github, Méthode Agile SCRUM avec Trello',
-    icon: <GitHub sx={taskItemIconStyle} />,
+    icon: <GitHub />,
   }, {
     primary: 'Conception de l\'application',
     secondary: 'Expérience utilisateur, Ajout de fonctionnalités',
-    icon: <Psychology sx={taskItemIconStyle} />,
+    icon: <Psychology />,
   }, {
     primary: 'Implémentation de l\'application',
     secondary: 'Réalisation des fonctionnalités et des fixes',
-    icon: <Code sx={taskItemIconStyle} />,
+    icon: <Code />,
   }],
 }];
 
-const fadeInDuration = 6000;
+const fadeInDuration = 10000;
 
 function ExperienceProjectSection(): JSX.Element {
   return (

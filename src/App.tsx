@@ -5,12 +5,14 @@ import './App.css';
 import Header from './components/UI/organisms/header';
 import PresentationSection from './components/UI/organisms/presentationSection';
 import ExperienceProjectSection from './components/UI/organisms/experienceProjectSection';
+import SkillsSection from './components/UI/organisms/skillsSection';
 
 function App() {
   return (
     <ThemeProvider theme={customTheme}>
       <Header />
       <PresentationSection />
+      <SkillsSection />
       <ExperienceProjectSection />
     </ThemeProvider>
   );
