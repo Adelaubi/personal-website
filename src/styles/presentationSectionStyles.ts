@@ -5,6 +5,7 @@ export const mainBoxStyle: Record<string, string> = {
   height: '90vh',
   paddingLeft: '2vw',
   paddingRight: '2vw',
+  paddingTop: '10vh',
   width: '96vw',
   flexDirection: 'row',
 };

@@ -5,10 +5,10 @@ import {
 } from '../types/generalTypes';
 
 export const sectionContainerStyle: Record<string, string | Record<string, string>> = {
-  height: { xs: 'auto', lg: '80vh' },
+  height: { xs: 'auto', lg: '90vh' },
   paddingLeft: '2vw',
   paddingRight: '2vw',
-  paddingTop: '5vh',
+  paddingTop: '15vh',
   paddingBottom: '5vh',
   width: '96vw',
   backgroundColor: 'black',

@@ -33,9 +33,7 @@ function Header(): JSX.Element {
         </Typography>
         {buttonLabels.map((buttonLabel) => (
           <a href={`#${buttonLabel}`} style={{ textDecoration: 'none' }}>
-            <Button
-              sx={buttonStyle}
-            >
+            <Button sx={buttonStyle}>
               {buttonLabel}
             </Button>
           </a>

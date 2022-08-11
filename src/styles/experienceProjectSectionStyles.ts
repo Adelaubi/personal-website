@@ -6,7 +6,7 @@ export const mainContainerStyle: Record<string, string | Record<string, string>>
   height: { xs: 'auto', lg: '85vh' },
   paddingLeft: '2vw',
   paddingRight: '2vw',
-  paddingTop: '5vh',
+  paddingTop: '15vh',
   width: '96vw',
 };
 
