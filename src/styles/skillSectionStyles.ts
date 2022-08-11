@@ -1,4 +1,8 @@
 import ColorPalette from './colorPalette';
+import {
+  LinearProgressVariantType,
+  TitleType,
+} from '../types/generalTypes';
 
 export const sectionContainerStyle: Record<string, string | Record<string, string>> = {
   height: { xs: 'auto', lg: '80vh' },
@@ -62,3 +66,11 @@ export const detailsStyle: Record<string, string> = {
   fontFamily: 'Avenir',
   color: ColorPalette.yellow,
 };
+
+export const titleVariant: Record<string, TitleType> = {
+  main: 'h2',
+  section: 'h4',
+  skill: 'h6',
+};
+
+export const linearProgressVariant: LinearProgressVariantType = 'buffer';

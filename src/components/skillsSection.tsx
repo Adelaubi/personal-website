@@ -16,62 +16,16 @@ import {
   languageSkillsColumnStyle,
   languageSkillLinearProgressStyle,
   detailsStyle,
+  titleVariant,
+  linearProgressVariant,
 } from '../styles/skillSectionStyles';
 import {
-  languageSkillType,
-  skillType,
-} from '../types/skillsSectionTypes';
-
-const fadeInDuration = 6000;
-
-const skills: Array<skillType> = [{
-  title: null,
-  content: [{
-    name: 'Développement Frontend',
-    value: 100,
-    color: 'primary',
-  }, {
-    name: 'Développement Backend',
-    value: 40,
-    color: 'secondary',
-  }],
-}, {
-  title: 'Frameworks',
-  content: [{
-    name: 'React',
-    value: 100,
-    color: 'primary',
-  }, {
-    name: 'AWS',
-    value: 40,
-    color: 'secondary',
-  }, {
-    name: 'Express',
-    value: 20,
-    color: 'secondary',
-  }],
-}];
-
-const languageSkills: languageSkillType = {
-  title: 'Langages',
-  content: [[{
-    name: 'TypeScript',
-    value: 100,
-    color: 'primary',
-  }, {
-    name: 'Golang',
-    value: 40,
-    color: 'secondary',
-  }], [{
-    name: 'Java',
-    value: 40,
-    color: 'secondary',
-  }, {
-    name: 'Python',
-    value: 40,
-    color: 'secondary',
-  }]],
-};
+  skills,
+  fadeInDuration,
+  languageSkills,
+  linearProgressBufferValue,
+  detailsContent,
+} from '../assets/data/skillsSectionData';
 
 function skillsSection(): JSX.Element {
   return (
@@ -82,7 +36,7 @@ function skillsSection(): JSX.Element {
       <Box sx={sectionContainerStyle}>
         <Box sx={mainContainerStyle}>
           <Typography
-            variant="h2"
+            variant={titleVariant.main}
             sx={mainTitleStyle}
           >
             Compétences
@@ -92,7 +46,7 @@ function skillsSection(): JSX.Element {
               <Box>
                 {skillSection.title && (
                   <Typography
-                    variant="h4"
+                    variant={titleVariant.section}
                     sx={skillSectionTitleStyle}
                   >
                     {skillSection.title}
@@ -102,15 +56,15 @@ function skillsSection(): JSX.Element {
                   {skillSection.content.map((skill) => (
                     <Box>
                       <Typography
-                        variant="h6"
+                        variant={titleVariant.skill}
                         sx={skillTitleStyle}
                       >
                         {skill.name}
                       </Typography>
                       <LinearProgress
-                        variant="buffer"
+                        variant={linearProgressVariant}
                         value={skill.value}
-                        valueBuffer={0}
+                        valueBuffer={linearProgressBufferValue}
                         color={skill.color}
                       />
                     </Box>
@@ -120,7 +74,7 @@ function skillsSection(): JSX.Element {
             ))
           }
           <Typography
-            variant="h4"
+            variant={titleVariant.section}
             sx={skillSectionTitleStyle}
           >
             {languageSkills.title}
@@ -135,15 +89,15 @@ function skillsSection(): JSX.Element {
                 {languageSkillsSection.map((languageSkill) => (
                   <Box>
                     <Typography
-                      variant="h6"
+                      variant={titleVariant.skill}
                       sx={skillTitleStyle}
                     >
                       {languageSkill.name}
                     </Typography>
                     <LinearProgress
-                      variant="buffer"
+                      variant={linearProgressVariant}
                       value={languageSkill.value}
-                      valueBuffer={0}
+                      valueBuffer={linearProgressBufferValue}
                       color={languageSkill.color}
                       sx={languageSkillLinearProgressStyle}
                     />
@@ -153,7 +107,7 @@ function skillsSection(): JSX.Element {
             ))}
           </Box>
           <Typography sx={detailsStyle}>
-            *Relatives à mon expérience maximale avec React Typescript
+            {detailsContent}
           </Typography>
         </Box>
       </Box>
