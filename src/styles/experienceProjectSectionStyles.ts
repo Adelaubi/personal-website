@@ -1,3 +1,7 @@
+import {
+  TitleType,
+} from '../types/generalTypes';
+
 export const mainContainerStyle: Record<string, string | Record<string, string>> = {
   height: { xs: 'auto', lg: '85vh' },
   paddingLeft: '2vw',
@@ -51,4 +55,10 @@ export const experienceTaskPrimaryStyle: Record<string, string> = {
 export const experienceTaskSecondaryStyle: Record<string, string> = {
   fontFamily: 'Avenir',
   color: 'gray',
+};
+
+export const titleVariant: Record<string, TitleType> = {
+  main: 'h2',
+  section: 'h4',
+  taskTitle: 'h6',
 };
