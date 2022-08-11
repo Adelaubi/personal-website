@@ -4,14 +4,15 @@ import {
 
 export const mainContainerStyle: Record<string, string | Record<string, string>> = {
   height: { xs: 'auto', lg: '85vh' },
-  paddingLeft: '2vw',
-  paddingRight: '2vw',
+  paddingLeft: '5vw',
+  paddingRight: '5vw',
   paddingTop: '15vh',
-  width: '96vw',
+  width: '90vw',
 };
 
 export const mainTitleStyle: Record<string, string> = {
   fontFamily: 'Avenir',
+  fontWeight: 'bold',
 };
 
 export const experiencesContainerStyle: Record<string, string | Record<string, string>> = {

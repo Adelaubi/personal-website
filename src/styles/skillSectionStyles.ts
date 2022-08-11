@@ -16,6 +16,7 @@ export const sectionContainerStyle: Record<string, string | Record<string, strin
 
 export const mainTitleStyle: Record<string, string> = {
   fontFamily: 'Avenir',
+  fontWeight: 'bold',
   color: 'white',
   marginBottom: '3vh',
 };

@@ -17,7 +17,7 @@ import {
   descriptionBoxStyle,
   mainTextStyle,
   listItemTextStyle,
-  mainTextVariant,
+  mainTextVariant, mainContentStyle,
 } from '../styles/presentationSectionStyles';
 import {
   mainText,
@@ -33,40 +33,47 @@ function PresentationSection(): JSX.Element {
       timeout={fadeInDuration}
     >
       <Box sx={mainBoxStyle} id="Présentation">
-        <Box sx={photoBoxStyle}>
-          <img
-            src={profilPhoto}
-            alt={alternativePhoto}
-            style={photoStyle}
-          />
+        <Box sx={{ marginTop: '7vh', marginLeft: '5vw' }}>
+          <Typography variant="h2" sx={{ fontFamily: 'Avenir', fontWeight: 'bold' }}>
+            Présentation
+          </Typography>
         </Box>
-        <Box sx={descriptionBoxStyle}>
-          {mainText.map((textItem) => (
-            <Typography
-              variant={mainTextVariant}
-              sx={mainTextStyle}
-              key={textItem}
-            >
-              {textItem}
-            </Typography>
-          ))}
-          <List>
-            {
-              listItems.map((listItem) => (
-                <ListItem key={listItem.primaryText}>
-                  <ListItemIcon>
-                    {listItem.itemIcon}
-                  </ListItemIcon>
-                  <ListItemText
-                    primaryTypographyProps={listItemTextStyle}
-                    secondaryTypographyProps={listItemTextStyle}
-                    primary={listItem.primaryText}
-                    secondary={listItem.secondaryText ?? null}
-                  />
-                </ListItem>
-              ))
-            }
-          </List>
+        <Box sx={mainContentStyle}>
+          <Box sx={photoBoxStyle}>
+            <img
+              src={profilPhoto}
+              alt={alternativePhoto}
+              style={photoStyle}
+            />
+          </Box>
+          <Box sx={descriptionBoxStyle}>
+            {mainText.map((textItem) => (
+              <Typography
+                variant={mainTextVariant}
+                sx={mainTextStyle}
+                key={textItem}
+              >
+                {textItem}
+              </Typography>
+            ))}
+            <List>
+              {
+                listItems.map((listItem) => (
+                  <ListItem key={listItem.primaryText}>
+                    <ListItemIcon>
+                      {listItem.itemIcon}
+                    </ListItemIcon>
+                    <ListItemText
+                      primaryTypographyProps={listItemTextStyle}
+                      secondaryTypographyProps={listItemTextStyle}
+                      primary={listItem.primaryText}
+                      secondary={listItem.secondaryText ?? null}
+                    />
+                  </ListItem>
+                ))
+              }
+            </List>
+          </Box>
         </Box>
       </Box>
     </Fade>

@@ -9,14 +9,14 @@ import {
 } from '@mui/icons-material';
 import { experienceType } from '../../types/experienceProjectSectionTypes';
 
-export const mainTitle = 'Expériences et Projets';
+export const mainTitle = 'Expériences';
 export const taskTitle = 'Tâches réalisées :';
 
 export const experiences: Array<experienceType> = [{
   title: 'Stage Artisan Web - Coddity',
   titleLink: 'https://coddity.com',
   content: [
-    'Réalisation d\'une période de stage de 6 mois en tant que développeur full-stack. J\'ai pu travailler sur la plateforme Danil qui permet le monitoring de chatbots au travers de KPIs. Ce travail s\'est effectué aussi bien sur le côté Frontend(React Typescript) que Backend(AWS/Python). J\'ai également pu implémenter avec un autre développeur la totalité ',
+    'Réalisation d\'une période de stage de 6 mois en tant que développeur full-stack. J\'ai pu travailler sur la plateforme Danil qui permet le monitoring de chatbots au travers de KPIs. Ce travail s\'est effectué aussi bien sur le côté Frontend (React Typescript) que Backend (AWS/Python). J\'ai également pu implémenter avec un autre développeur la totalité ',
     'site commercial',
     ' de Danil avec Svelte Typescript.',
   ],

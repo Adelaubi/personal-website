@@ -27,6 +27,7 @@ import {
   detailsContent,
   mainTitle,
 } from '../assets/data/skillsSectionData';
+import ColorPalette from '../styles/colorPalette';
 
 function skillsSection(): JSX.Element {
   return (
@@ -58,7 +59,7 @@ function skillsSection(): JSX.Element {
                     <Box>
                       <Typography
                         variant={titleVariant.skill}
-                        sx={skillTitleStyle}
+                        sx={[skillTitleStyle, { color: skill.color === 'primary' ? ColorPalette.red : ColorPalette.pink }]}
                       >
                         {skill.name}
                       </Typography>
@@ -91,7 +92,7 @@ function skillsSection(): JSX.Element {
                   <Box>
                     <Typography
                       variant={titleVariant.skill}
-                      sx={skillTitleStyle}
+                      sx={[skillTitleStyle, { color: languageSkill.color === 'primary' ? ColorPalette.red : ColorPalette.pink }]}
                     >
                       {languageSkill.name}
                     </Typography>
