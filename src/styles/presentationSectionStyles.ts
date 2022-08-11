@@ -1,3 +1,5 @@
+import { TitleType } from '../types/generalTypes';
+
 export const mainBoxStyle: Record<string, string> = {
   display: 'flex',
   height: '90vh',
@@ -33,3 +35,5 @@ export const mainTextStyle: Record<string, string|number> = {
 export const listItemTextStyle: Record<string, string> = {
   fontFamily: 'Avenir',
 };
+
+export const mainTextVariant: TitleType = 'h6';

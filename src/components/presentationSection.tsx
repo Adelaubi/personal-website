@@ -8,15 +8,8 @@ import {
   ListItemText,
   Fade,
 } from '@mui/material';
-import {
-  Calculate,
-  Percent,
-  Hub,
-  Code,
-} from '@mui/icons-material';
 // @ts-ignore
 import profilPhoto from '../assets/photo/profil.jpg';
-import { ListItemType } from '../types/presentationSectionTypes';
 import {
   mainBoxStyle,
   photoBoxStyle,
@@ -24,36 +17,14 @@ import {
   descriptionBoxStyle,
   mainTextStyle,
   listItemTextStyle,
+  mainTextVariant,
 } from '../styles/presentationSectionStyles';
-
-const mainText: Array<string> = [
-  'Augustin de Laubier - 22 ans',
-  'Université de Technologie de Compiègne - 5ème Année',
-  'Génie Informatique - Système et Réseau',
-  'Cours Suivis :',
-];
-
-const listItems: Array<ListItemType> = [
-  {
-    primaryText: 'Mathématiques',
-    secondaryText: 'Analyse numérique, Algèbre linéaire',
-    itemIcon: <Calculate />,
-  }, {
-    primaryText: 'Statistiques et Probabilités',
-    itemIcon: <Percent />,
-  }, {
-    primaryText: 'Systèmes et Réseaux',
-    secondaryText: 'Structure d\'un réseau, Sécurité Informatique, Algorithmes Répartis, Systèmes d\'exploitation',
-    itemIcon: <Hub />,
-  }, {
-    primaryText: 'Programmation',
-    secondaryText: 'Programmation Orientée Objet, Développement Web',
-    itemIcon: <Code />,
-  },
-];
-
-const photoAlternative = 'Photo de profil';
-const fadeInDuration = 2000;
+import {
+  mainText,
+  listItems,
+  alternativePhoto,
+  fadeInDuration,
+} from '../assets/data/presentationSectionData';
 
 function PresentationSection(): JSX.Element {
   return (
@@ -65,14 +36,14 @@ function PresentationSection(): JSX.Element {
         <Box sx={photoBoxStyle}>
           <img
             src={profilPhoto}
-            alt={photoAlternative}
+            alt={alternativePhoto}
             style={photoStyle}
           />
         </Box>
         <Box sx={descriptionBoxStyle}>
           {mainText.map((textItem) => (
             <Typography
-              variant="h6"
+              variant={mainTextVariant}
               sx={mainTextStyle}
               key={textItem}
             >
