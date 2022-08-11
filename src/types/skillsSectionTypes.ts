@@ -6,5 +6,10 @@ interface skillContentType {
 
 export interface skillType {
   title: string | null
-  content: Array<skillContentType >
+  content: Array<skillContentType>
+}
+
+export interface languageSkillType {
+  title: string
+  content: Array<Array<skillContentType>>
 }

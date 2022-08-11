@@ -17,7 +17,10 @@ import {
   languageSkillLinearProgressStyle,
   detailsStyle,
 } from '../../../styles/skillSectionStyles';
-import { skillType } from '../../../types/skillsSectionTypes';
+import {
+  languageSkillType,
+  skillType,
+} from '../../../types/skillsSectionTypes';
 
 const fadeInDuration = 6000;
 
@@ -49,8 +52,7 @@ const skills: Array<skillType> = [{
   }],
 }];
 
-/*
-{
+const languageSkills: languageSkillType = {
   title: 'Langages',
   content: [[{
     name: 'TypeScript',
@@ -69,8 +71,7 @@ const skills: Array<skillType> = [{
     value: 40,
     color: 'secondary',
   }]],
-}
-*/
+};
 
 function skillsSection(): JSX.Element {
   return (
@@ -122,70 +123,34 @@ function skillsSection(): JSX.Element {
             variant="h4"
             sx={skillSectionTitleStyle}
           >
-            Langages
+            {languageSkills.title}
           </Typography>
           <Box
             sx={languageSkillsContainerStyle}
           >
-            <Box
-              sx={languageSkillsColumnStyle}
-            >
-              <Typography
-                variant="h6"
-                sx={skillTitleStyle}
+            {languageSkills.content.map((languageSkillsSection) => (
+              <Box
+                sx={languageSkillsColumnStyle}
               >
-                TypeScript
-              </Typography>
-              <LinearProgress
-                variant="buffer"
-                value={100}
-                valueBuffer={0}
-                sx={languageSkillLinearProgressStyle}
-              />
-              <Typography
-                variant="h6"
-                sx={skillTitleStyle}
-              >
-                Golang
-              </Typography>
-              <LinearProgress
-                variant="buffer"
-                value={30}
-                valueBuffer={0}
-                sx={languageSkillLinearProgressStyle}
-                color="secondary"
-              />
-            </Box>
-            <Box
-              sx={languageSkillsColumnStyle}
-            >
-              <Typography
-                variant="h6"
-                sx={skillTitleStyle}
-              >
-                Java
-              </Typography>
-              <LinearProgress
-                variant="buffer"
-                value={50}
-                valueBuffer={0}
-                sx={languageSkillLinearProgressStyle}
-                color="secondary"
-              />
-              <Typography
-                variant="h6"
-                sx={skillTitleStyle}
-              >
-                C++
-              </Typography>
-              <LinearProgress
-                variant="buffer"
-                value={25}
-                valueBuffer={0}
-                sx={languageSkillLinearProgressStyle}
-                color="secondary"
-              />
-            </Box>
+                {languageSkillsSection.map((languageSkill) => (
+                  <Box>
+                    <Typography
+                      variant="h6"
+                      sx={skillTitleStyle}
+                    >
+                      {languageSkill.name}
+                    </Typography>
+                    <LinearProgress
+                      variant="buffer"
+                      value={languageSkill.value}
+                      valueBuffer={0}
+                      color={languageSkill.color}
+                      sx={languageSkillLinearProgressStyle}
+                    />
+                  </Box>
+                ))}
+              </Box>
+            ))}
           </Box>
           <Typography sx={detailsStyle}>
             *Relatives à mon expérience maximale avec React Typescript
