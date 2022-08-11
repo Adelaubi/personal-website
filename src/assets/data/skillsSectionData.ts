@@ -5,6 +5,8 @@ import {
 
 export const fadeInDuration = 6000;
 
+export const mainTitle = 'Skills';
+
 export const skills: Array<skillType> = [{
   title: null,
   content: [{
@@ -56,4 +58,4 @@ export const languageSkills: languageSkillType = {
 
 export const linearProgressBufferValue: number = 0;
 
-export const detailsContent = '*Relatives à mon expérience maximale avec React Typescript';
+export const detailsContent = 'Relatifs à mon expérience maximale avec React Typescript (1 an et demi)';

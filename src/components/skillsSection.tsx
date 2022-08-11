@@ -25,6 +25,7 @@ import {
   languageSkills,
   linearProgressBufferValue,
   detailsContent,
+  mainTitle,
 } from '../assets/data/skillsSectionData';
 
 function skillsSection(): JSX.Element {
@@ -39,7 +40,7 @@ function skillsSection(): JSX.Element {
             variant={titleVariant.main}
             sx={mainTitleStyle}
           >
-            Compétences
+            {mainTitle}
           </Typography>
           {
             skills.map((skillSection) => (

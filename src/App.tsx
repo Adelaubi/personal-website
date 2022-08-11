@@ -6,6 +6,7 @@ import Header from './components/header';
 import PresentationSection from './components/presentationSection';
 import ExperienceProjectSection from './components/experienceProjectSection';
 import SkillsSection from './components/skillsSection';
+import ContactSection from './components/contactSection';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <PresentationSection />
       <SkillsSection />
       <ExperienceProjectSection />
+      <ContactSection />
     </ThemeProvider>
   );
 }
