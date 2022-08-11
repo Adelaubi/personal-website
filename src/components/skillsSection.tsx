@@ -16,11 +16,11 @@ import {
   languageSkillsColumnStyle,
   languageSkillLinearProgressStyle,
   detailsStyle,
-} from '../../../styles/skillSectionStyles';
+} from '../styles/skillSectionStyles';
 import {
   languageSkillType,
   skillType,
-} from '../../../types/skillsSectionTypes';
+} from '../types/skillsSectionTypes';
 
 const fadeInDuration = 6000;
 

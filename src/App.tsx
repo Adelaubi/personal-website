@@ -2,10 +2,10 @@ import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import customTheme from './styles/customTheme';
 import './App.css';
-import Header from './components/UI/organisms/header';
-import PresentationSection from './components/UI/organisms/presentationSection';
-import ExperienceProjectSection from './components/UI/organisms/experienceProjectSection';
-import SkillsSection from './components/UI/organisms/skillsSection';
+import Header from './components/header';
+import PresentationSection from './components/presentationSection';
+import ExperienceProjectSection from './components/experienceProjectSection';
+import SkillsSection from './components/skillsSection';
 
 function App() {
   return (

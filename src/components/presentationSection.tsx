@@ -15,8 +15,8 @@ import {
   Code,
 } from '@mui/icons-material';
 // @ts-ignore
-import profilPhoto from '../../../assets/photo/profil.jpg';
-import { ListItemType } from '../../../types/presentationSectionTypes';
+import profilPhoto from '../assets/photo/profil.jpg';
+import { ListItemType } from '../types/presentationSectionTypes';
 import {
   mainBoxStyle,
   photoBoxStyle,
@@ -24,7 +24,7 @@ import {
   descriptionBoxStyle,
   mainTextStyle,
   listItemTextStyle,
-} from '../../../styles/presentationSectionStyles';
+} from '../styles/presentationSectionStyles';
 
 const mainText: Array<string> = [
   'Augustin de Laubier - 22 ans',

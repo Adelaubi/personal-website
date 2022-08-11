@@ -29,8 +29,8 @@ import {
   experienceTaskListStyle,
   experienceTaskPrimaryStyle,
   experienceTaskSecondaryStyle,
-} from '../../../styles/experienceProjectSectionStyles';
-import { experienceType } from '../../../types/experienceProjectSectionTypes';
+} from '../styles/experienceProjectSectionStyles';
+import { experienceType } from '../types/experienceProjectSectionTypes';
 
 const experiences: Array<experienceType> = [{
   title: 'Stage Artisan Web - Coddity',

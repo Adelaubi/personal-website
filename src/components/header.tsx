@@ -8,7 +8,7 @@ import {
 import {
   ownerName,
   buttonLabels,
-} from '../../../assets/data/headerData';
+} from '../assets/data/headerData';
 import {
   appBarPosition,
   appBarColor,
@@ -17,7 +17,7 @@ import {
   ownerNameStyle,
   buttonColor,
   buttonStyle,
-} from '../../../styles/headerStyles';
+} from '../styles/headerStyles';
 
 function Header(): JSX.Element {
   return (
