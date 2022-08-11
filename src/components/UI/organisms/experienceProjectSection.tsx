@@ -16,6 +16,20 @@ import {
   Psychology,
   Code,
 } from '@mui/icons-material';
+import {
+  taskItemIconStyle,
+  mainContainerStyle,
+  mainTitleStyle,
+  experiencesContainerStyle,
+  singleExperienceContainerStyle,
+  experienceTitleLinkStyle,
+  experienceContentStyle,
+  experienceContentLinkStyle,
+  experienceTaskTitleStyle,
+  experienceTaskListStyle,
+  experienceTaskPrimaryStyle,
+  experienceTaskSecondaryStyle,
+} from '../../../styles/experienceProjectSectionStyles';
 import { experienceType } from '../../../types/experienceProjectSectionTypes';
 
 const experiences: Array<experienceType> = [{
@@ -30,15 +44,15 @@ const experiences: Array<experienceType> = [{
   tasks: [{
     primary: 'Danil - Frontend',
     secondary: 'Réalisation de features et de fixes, tests E2E et unitaires',
-    icon: <Web sx={{ color: 'white' }} />,
+    icon: <Web sx={taskItemIconStyle} />,
   }, {
     primary: 'Danil - Backend',
     secondary: 'Réalisation de features et de fixes, tests unitaires',
-    icon: <Storage sx={{ color: 'white' }} />,
+    icon: <Storage sx={taskItemIconStyle} />,
   }, {
     primary: 'Danil - Site commercial',
     secondary: 'Réalisation de l\'architecture et des fonctionnalités, gestion du projet (Git, ...)',
-    icon: <ShoppingCartCheckout sx={{ color: 'white' }} />,
+    icon: <ShoppingCartCheckout sx={taskItemIconStyle} />,
   }],
 }, {
   title: 'Projet Universitaire - Dérives',
@@ -52,76 +66,45 @@ const experiences: Array<experienceType> = [{
   tasks: [{
     primary: 'Gestion du projet',
     secondary: 'Maintien du Github, Méthode Agile SCRUM avec Trello',
-    icon: <GitHub sx={{ color: 'white' }} />,
+    icon: <GitHub sx={taskItemIconStyle} />,
   }, {
     primary: 'Conception de l\'application',
     secondary: 'Expérience utilisateur, Ajout de fonctionnalités',
-    icon: <Psychology sx={{ color: 'white' }} />,
+    icon: <Psychology sx={taskItemIconStyle} />,
   }, {
     primary: 'Implémentation de l\'application',
     secondary: 'Réalisation des fonctionnalités et des fixes',
-    icon: <Code sx={{ color: 'white' }} />,
+    icon: <Code sx={taskItemIconStyle} />,
   }],
 }];
 
 function ExperienceProjectSection(): JSX.Element {
   return (
-    <Box sx={{
-      height: '85vh',
-      width: '100vw',
-      backgroundColor: 'black',
-      paddingTop: '5vh',
-    }}
-    >
+    <Box sx={mainContainerStyle}>
       <Typography
         variant="h2"
-        sx={{
-          fontFamily: 'Avenir',
-          color: 'white',
-          marginLeft: '5vh',
-        }}
+        sx={mainTitleStyle}
       >
         Expériences et Projets
       </Typography>
-      <Box sx={{
-        display: 'flex',
-        flexDirection: 'row',
-        marginTop: '3vh',
-      }}
-      >
+      <Box sx={experiencesContainerStyle}>
         {
           experiences.map((experience) => (
-            <Box sx={{
-              flexDirection: 'column',
-              width: '50vw',
-            }}
-            >
+            <Box sx={singleExperienceContainerStyle}>
               <Link
                 href={experience.titleLink}
                 variant="h4"
-                sx={{
-                  fontFamily: 'Avenir',
-                  color: 'white',
-                  marginLeft: '6vh',
-                }}
+                sx={experienceTitleLinkStyle}
               >
                 {experience.title}
               </Link>
-              <Typography sx={{
-                fontFamily: 'Avenir',
-                color: 'white',
-                marginLeft: '6vh',
-                marginTop: '2vh',
-              }}
-              >
+              <Typography sx={experienceContentStyle}>
                 {/* eslint-disable-next-line max-len */}
                 {experience.content[0]}
                 {' '}
                 <a
                   href={experience.contentLink}
-                  style={{
-                    color: 'gray',
-                  }}
+                  style={experienceContentLinkStyle}
                 >
                   {experience.content[1]}
                 </a>
@@ -129,27 +112,19 @@ function ExperienceProjectSection(): JSX.Element {
               </Typography>
               <Typography
                 variant="h6"
-                sx={{
-                  fontFamily: 'Avenir',
-                  color: 'white',
-                  marginLeft: '6vh',
-                  marginTop: '2vh',
-                }}
+                sx={experienceTaskTitleStyle}
               >
                 Tâches réalisées :
               </Typography>
-              <List sx={{
-                marginLeft: '7vh',
-              }}
-              >
+              <List sx={experienceTaskListStyle}>
                 {experience.tasks.map((task) => (
                   <ListItem>
                     <ListItemIcon>
                       {task.icon}
                     </ListItemIcon>
                     <ListItemText
-                      primaryTypographyProps={{ fontFamily: 'Avenir', color: 'white' }}
-                      secondaryTypographyProps={{ fontFamily: 'Avenir', color: 'gray' }}
+                      primaryTypographyProps={experienceTaskPrimaryStyle}
+                      secondaryTypographyProps={experienceTaskSecondaryStyle}
                       primary={task.primary}
                       secondary={task.secondary}
                     />
