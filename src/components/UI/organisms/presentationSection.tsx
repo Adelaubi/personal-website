@@ -53,13 +53,13 @@ const listItems: Array<ListItemType> = [
 ];
 
 const photoAlternative = 'Photo de profil';
-const fadeInTimeOut = 2000;
+const fadeInDuration = 2000;
 
 function PresentationSection(): JSX.Element {
   return (
     <Fade
       in
-      timeout={fadeInTimeOut}
+      timeout={fadeInDuration}
     >
       <Box sx={mainBoxStyle}>
         <Box sx={photoBoxStyle}>

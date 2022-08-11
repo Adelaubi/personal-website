@@ -7,6 +7,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Fade,
 } from '@mui/material';
 import {
   Web,
@@ -78,64 +79,71 @@ const experiences: Array<experienceType> = [{
   }],
 }];
 
+const fadeInDuration = 6000;
+
 function ExperienceProjectSection(): JSX.Element {
   return (
-    <Box sx={mainContainerStyle}>
-      <Typography
-        variant="h2"
-        sx={mainTitleStyle}
-      >
-        Expériences et Projets
-      </Typography>
-      <Box sx={experiencesContainerStyle}>
-        {
-          experiences.map((experience) => (
-            <Box sx={singleExperienceContainerStyle} key={experience.title}>
-              <Link
-                href={experience.titleLink}
-                variant="h4"
-                sx={experienceTitleLinkStyle}
-              >
-                {experience.title}
-              </Link>
-              <Typography sx={experienceContentStyle}>
-                {/* eslint-disable-next-line max-len */}
-                {experience.content[0]}
-                {' '}
-                <a
-                  href={experience.contentLink}
-                  style={experienceContentLinkStyle}
+    <Fade
+      in
+      timeout={fadeInDuration}
+    >
+      <Box sx={mainContainerStyle}>
+        <Typography
+          variant="h2"
+          sx={mainTitleStyle}
+        >
+          Expériences et Projets
+        </Typography>
+        <Box sx={experiencesContainerStyle}>
+          {
+            experiences.map((experience) => (
+              <Box sx={singleExperienceContainerStyle} key={experience.title}>
+                <Link
+                  href={experience.titleLink}
+                  variant="h4"
+                  sx={experienceTitleLinkStyle}
                 >
-                  {experience.content[1]}
-                </a>
-                {experience.content[2]}
-              </Typography>
-              <Typography
-                variant="h6"
-                sx={experienceTaskTitleStyle}
-              >
-                Tâches réalisées :
-              </Typography>
-              <List sx={experienceTaskListStyle}>
-                {experience.tasks.map((task) => (
-                  <ListItem key={task.primary}>
-                    <ListItemIcon>
-                      {task.icon}
-                    </ListItemIcon>
-                    <ListItemText
-                      primaryTypographyProps={experienceTaskPrimaryStyle}
-                      secondaryTypographyProps={experienceTaskSecondaryStyle}
-                      primary={task.primary}
-                      secondary={task.secondary}
-                    />
-                  </ListItem>
-                ))}
-              </List>
-            </Box>
-          ))
-        }
+                  {experience.title}
+                </Link>
+                <Typography sx={experienceContentStyle}>
+                  {/* eslint-disable-next-line max-len */}
+                  {experience.content[0]}
+                  {' '}
+                  <a
+                    href={experience.contentLink}
+                    style={experienceContentLinkStyle}
+                  >
+                    {experience.content[1]}
+                  </a>
+                  {experience.content[2]}
+                </Typography>
+                <Typography
+                  variant="h6"
+                  sx={experienceTaskTitleStyle}
+                >
+                  Tâches réalisées :
+                </Typography>
+                <List sx={experienceTaskListStyle}>
+                  {experience.tasks.map((task) => (
+                    <ListItem key={task.primary}>
+                      <ListItemIcon>
+                        {task.icon}
+                      </ListItemIcon>
+                      <ListItemText
+                        primaryTypographyProps={experienceTaskPrimaryStyle}
+                        secondaryTypographyProps={experienceTaskSecondaryStyle}
+                        primary={task.primary}
+                        secondary={task.secondary}
+                      />
+                    </ListItem>
+                  ))}
+                </List>
+              </Box>
+            ))
+          }
+        </Box>
       </Box>
-    </Box>
+    </Fade>
   );
 }
 
