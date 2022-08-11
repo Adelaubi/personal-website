@@ -1,7 +1,9 @@
 export const mainBoxStyle: Record<string, string> = {
   display: 'flex',
   height: '90vh',
-  width: '100vw',
+  paddingLeft: '2vw',
+  paddingRight: '2vw',
+  width: '96vw',
   flexDirection: 'row',
 };
 

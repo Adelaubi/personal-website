@@ -2,11 +2,13 @@ export const taskItemIconStyle: Record<string, string> = {
   color: 'white',
 };
 
-export const mainContainerStyle: Record<string, string> = {
-  height: '85vh',
-  width: '100vw',
-  backgroundColor: 'black',
+export const mainContainerStyle: Record<string, string | Record<string, string>> = {
+  height: { xs: 'auto', lg: '85vh' },
+  paddingLeft: '2vw',
+  paddingRight: '2vw',
   paddingTop: '5vh',
+  width: '96vw',
+  backgroundColor: 'black',
 };
 
 export const mainTitleStyle: Record<string, string> = {
@@ -15,27 +17,25 @@ export const mainTitleStyle: Record<string, string> = {
   marginLeft: '5vh',
 };
 
-export const experiencesContainerStyle: Record<string, string> = {
+export const experiencesContainerStyle: Record<string, string | Record<string, string>> = {
   display: 'flex',
-  flexDirection: 'row',
+  flexDirection: { xs: 'column', lg: 'row' },
   marginTop: '3vh',
 };
 
-export const singleExperienceContainerStyle: Record<string, string> = {
+export const singleExperienceContainerStyle: Record<string, string | Record<string, string>> = {
   flexDirection: 'column',
-  width: '50vw',
+  width: { xs: 'auto', lg: '50vw' },
 };
 
-export const experienceTitleLinkStyle: Record<string, string> = {
+export const experienceTitleLinkStyle: Record<string, string | Record<string, string>> = {
   fontFamily: 'Avenir',
   color: 'white',
-  marginLeft: '6vh',
 };
 
-export const experienceContentStyle: Record<string, string> = {
+export const experienceContentStyle: Record<string, string | Record<string, string>> = {
   fontFamily: 'Avenir',
   color: 'white',
-  marginLeft: '6vh',
   marginTop: '2vh',
 };
 
@@ -43,15 +43,14 @@ export const experienceContentLinkStyle: Record<string, string> = {
   color: 'gray',
 };
 
-export const experienceTaskTitleStyle: Record<string, string> = {
+export const experienceTaskTitleStyle: Record<string, string | Record<string, string>> = {
   fontFamily: 'Avenir',
   color: 'white',
-  marginLeft: '6vh',
   marginTop: '2vh',
 };
 
-export const experienceTaskListStyle: Record<string, string> = {
-  marginLeft: '7vh',
+export const experienceTaskListStyle: Record<string, string | Record<string, string>> = {
+  marginLeft: '1vh',
 };
 
 export const experienceTaskPrimaryStyle: Record<string, string> = {

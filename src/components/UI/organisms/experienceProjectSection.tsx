@@ -90,7 +90,7 @@ function ExperienceProjectSection(): JSX.Element {
       <Box sx={experiencesContainerStyle}>
         {
           experiences.map((experience) => (
-            <Box sx={singleExperienceContainerStyle}>
+            <Box sx={singleExperienceContainerStyle} key={experience.title}>
               <Link
                 href={experience.titleLink}
                 variant="h4"
@@ -118,7 +118,7 @@ function ExperienceProjectSection(): JSX.Element {
               </Typography>
               <List sx={experienceTaskListStyle}>
                 {experience.tasks.map((task) => (
-                  <ListItem>
+                  <ListItem key={task.primary}>
                     <ListItemIcon>
                       {task.icon}
                     </ListItemIcon>
