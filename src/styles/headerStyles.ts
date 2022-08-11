@@ -17,8 +17,9 @@ export const ownerNameStyle: Record<string, string|number> = {
   fontFamily: 'Avenir',
 };
 
-export const buttonColor: ColorType = 'inherit';
 export const buttonStyle: Record<string, string | Record<string, string>> = {
+  color: 'white',
+  textDecoration: 'none',
   display: {
     xs: 'none',
     sm: 'block',

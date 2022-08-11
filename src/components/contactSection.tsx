@@ -15,7 +15,7 @@ import {
 
 function ContactSection(): JSX.Element {
   return (
-    <Box sx={mainContainerStyle}>
+    <Box sx={mainContainerStyle} id="Liens et Contact">
       <Box sx={linksContainerStyle}>
         {
           links.map((link) => (

@@ -34,7 +34,7 @@ function skillsSection(): JSX.Element {
       in
       timeout={fadeInDuration}
     >
-      <Box sx={sectionContainerStyle}>
+      <Box sx={sectionContainerStyle} id="Skills">
         <Box sx={mainContainerStyle}>
           <Typography
             variant={titleVariant.main}

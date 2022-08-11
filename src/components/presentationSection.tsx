@@ -32,7 +32,7 @@ function PresentationSection(): JSX.Element {
       in
       timeout={fadeInDuration}
     >
-      <Box sx={mainBoxStyle}>
+      <Box sx={mainBoxStyle} id="Présentation">
         <Box sx={photoBoxStyle}>
           <img
             src={profilPhoto}

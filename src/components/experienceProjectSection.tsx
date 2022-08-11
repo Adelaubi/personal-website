@@ -36,7 +36,7 @@ function ExperienceProjectSection(): JSX.Element {
       in
       timeout={fadeInDuration}
     >
-      <Box sx={mainContainerStyle}>
+      <Box sx={mainContainerStyle} id="Expériences et Projets">
         <Typography
           variant={titleVariant.main}
           sx={mainTitleStyle}

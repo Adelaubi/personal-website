@@ -15,7 +15,6 @@ import {
   toolbarStyle,
   ownerNameVariant,
   ownerNameStyle,
-  buttonColor,
   buttonStyle,
 } from '../styles/headerStyles';
 
@@ -33,12 +32,13 @@ function Header(): JSX.Element {
           {ownerName}
         </Typography>
         {buttonLabels.map((buttonLabel) => (
-          <Button
-            color={buttonColor}
-            sx={buttonStyle}
-          >
-            {buttonLabel}
-          </Button>
+          <a href={`#${buttonLabel}`} style={{ textDecoration: 'none' }}>
+            <Button
+              sx={buttonStyle}
+            >
+              {buttonLabel}
+            </Button>
+          </a>
         ))}
       </Toolbar>
     </AppBar>
