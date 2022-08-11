@@ -17,11 +17,11 @@ import {
   languageSkillLinearProgressStyle,
   detailsStyle,
 } from '../../../styles/skillSectionStyles';
-// import { skillType } from '../../../types/skillsSectionTypes';
+import { skillType } from '../../../types/skillsSectionTypes';
 
 const fadeInDuration = 6000;
 
-/* const skills: Array<skillType> = [{
+const skills: Array<skillType> = [{
   title: null,
   content: [{
     name: 'Développement Frontend',
@@ -47,7 +47,7 @@ const fadeInDuration = 6000;
     value: 20,
     color: 'secondary',
   }],
-}]; */
+}];
 
 /*
 {
@@ -79,81 +79,45 @@ function skillsSection(): JSX.Element {
       timeout={fadeInDuration}
     >
       <Box sx={sectionContainerStyle}>
-        <Typography
-          variant="h2"
-          sx={mainTitleStyle}
-        >
-          Compétences
-        </Typography>
         <Box sx={mainContainerStyle}>
-          <Box sx={generalFrameworkSkillsContainerStyles}>
-            <Typography
-              variant="h6"
-              sx={skillTitleStyle}
-            >
-              Développement Frontend
-            </Typography>
-            <LinearProgress
-              variant="buffer"
-              value={100}
-              valueBuffer={0}
-            />
-            <Typography
-              variant="h6"
-              sx={skillTitleStyle}
-            >
-              Développement Backend
-            </Typography>
-            <LinearProgress
-              variant="buffer"
-              value={40}
-              valueBuffer={0}
-              color="secondary"
-            />
-          </Box>
           <Typography
-            variant="h4"
-            sx={skillSectionTitleStyle}
+            variant="h2"
+            sx={mainTitleStyle}
           >
-            Framework
+            Compétences
           </Typography>
-          <Box sx={generalFrameworkSkillsContainerStyles}>
-            <Typography
-              variant="h6"
-              sx={skillTitleStyle}
-            >
-              React
-            </Typography>
-            <LinearProgress
-              variant="buffer"
-              value={100}
-              valueBuffer={0}
-            />
-            <Typography
-              variant="h6"
-              sx={skillTitleStyle}
-            >
-              AWS
-            </Typography>
-            <LinearProgress
-              variant="buffer"
-              value={40}
-              valueBuffer={0}
-              color="secondary"
-            />
-            <Typography
-              variant="h6"
-              sx={skillTitleStyle}
-            >
-              Express / Django REST
-            </Typography>
-            <LinearProgress
-              variant="buffer"
-              value={15}
-              valueBuffer={0}
-              color="secondary"
-            />
-          </Box>
+          {
+            skills.map((skillSection) => (
+              <Box>
+                {skillSection.title && (
+                  <Typography
+                    variant="h4"
+                    sx={skillSectionTitleStyle}
+                  >
+                    {skillSection.title}
+                  </Typography>
+                )}
+                <Box sx={generalFrameworkSkillsContainerStyles}>
+                  {skillSection.content.map((skill) => (
+                    <Box>
+                      <Typography
+                        variant="h6"
+                        sx={skillTitleStyle}
+                      >
+                        {skill.name}
+                      </Typography>
+                      <LinearProgress
+                        variant="buffer"
+                        value={skill.value}
+                        valueBuffer={0}
+                        color={skill.color}
+                      />
+                    </Box>
+                  ))}
+                </Box>
+              </Box>
+            ))
+          }
           <Typography
             variant="h4"
             sx={skillSectionTitleStyle}
@@ -223,10 +187,10 @@ function skillsSection(): JSX.Element {
               />
             </Box>
           </Box>
+          <Typography sx={detailsStyle}>
+            *Relatives à mon expérience maximale avec React Typescript
+          </Typography>
         </Box>
-        <Typography sx={detailsStyle}>
-          *Relatives à mon expérience maximale avec React Typescript
-        </Typography>
       </Box>
     </Fade>
   );
