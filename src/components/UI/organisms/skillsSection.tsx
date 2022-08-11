@@ -5,8 +5,72 @@ import {
   Fade,
   LinearProgress,
 } from '@mui/material';
+import {
+  sectionContainerStyle,
+  mainTitleStyle,
+  mainContainerStyle,
+  generalFrameworkSkillsContainerStyles,
+  skillTitleStyle,
+  skillSectionTitleStyle,
+  languageSkillsContainerStyle,
+  languageSkillsColumnStyle,
+  languageSkillLinearProgressStyle,
+  detailsStyle,
+} from '../../../styles/skillSectionStyles';
+// import { skillType } from '../../../types/skillsSectionTypes';
 
 const fadeInDuration = 6000;
+
+/* const skills: Array<skillType> = [{
+  title: null,
+  content: [{
+    name: 'Développement Frontend',
+    value: 100,
+    color: 'primary',
+  }, {
+    name: 'Développement Backend',
+    value: 40,
+    color: 'secondary',
+  }],
+}, {
+  title: 'Frameworks',
+  content: [{
+    name: 'React',
+    value: 100,
+    color: 'primary',
+  }, {
+    name: 'AWS',
+    value: 40,
+    color: 'secondary',
+  }, {
+    name: 'Express',
+    value: 20,
+    color: 'secondary',
+  }],
+}]; */
+
+/*
+{
+  title: 'Langages',
+  content: [[{
+    name: 'TypeScript',
+    value: 100,
+    color: 'primary',
+  }, {
+    name: 'Golang',
+    value: 40,
+    color: 'secondary',
+  }], [{
+    name: 'Java',
+    value: 40,
+    color: 'secondary',
+  }, {
+    name: 'Python',
+    value: 40,
+    color: 'secondary',
+  }]],
+}
+*/
 
 function skillsSection(): JSX.Element {
   return (
@@ -14,61 +78,29 @@ function skillsSection(): JSX.Element {
       in
       timeout={fadeInDuration}
     >
-      <Box sx={{
-        height: { xs: 'auto', lg: '80vh' },
-        paddingLeft: '2vw',
-        paddingRight: '2vw',
-        paddingTop: '5vh',
-        paddingBottom: '5vh',
-        width: '96vw',
-        backgroundColor: 'black',
-      }}
-      >
+      <Box sx={sectionContainerStyle}>
         <Typography
           variant="h2"
-          sx={{
-            fontFamily: 'Avenir',
-            color: 'white',
-            marginBottom: '3vh',
-          }}
+          sx={mainTitleStyle}
         >
           Compétences
         </Typography>
-        <Box sx={{
-          width: '85%',
-          paddingLeft: '5%',
-          paddingRight: '10%',
-        }}
-        >
-          <Box sx={{
-            paddingLeft: '3%',
-            paddingRight: '3%',
-          }}
-          >
+        <Box sx={mainContainerStyle}>
+          <Box sx={generalFrameworkSkillsContainerStyles}>
             <Typography
               variant="h6"
-              sx={{
-                fontFamily: 'Avenir',
-                color: 'white',
-                marginBottom: '1vh',
-                marginTop: '2vh',
-              }}
+              sx={skillTitleStyle}
             >
               Développement Frontend
             </Typography>
             <LinearProgress
               variant="buffer"
-              value={80}
+              value={100}
               valueBuffer={0}
             />
             <Typography
               variant="h6"
-              sx={{
-                fontFamily: 'Avenir',
-                color: 'white',
-                marginBottom: '1vh',
-                marginTop: '2vh',
-              }}
+              sx={skillTitleStyle}
             >
               Développement Backend
             </Typography>
@@ -81,44 +113,25 @@ function skillsSection(): JSX.Element {
           </Box>
           <Typography
             variant="h4"
-            sx={{
-              fontFamily: 'Avenir',
-              color: 'white',
-              marginBottom: '1vh',
-              marginTop: '2vh',
-            }}
+            sx={skillSectionTitleStyle}
           >
             Framework
           </Typography>
-          <Box sx={{
-            paddingLeft: '3%',
-            paddingRight: '3%',
-          }}
-          >
+          <Box sx={generalFrameworkSkillsContainerStyles}>
             <Typography
               variant="h6"
-              sx={{
-                fontFamily: 'Avenir',
-                color: 'white',
-                marginBottom: '1vh',
-                marginTop: '2vh',
-              }}
+              sx={skillTitleStyle}
             >
               React
             </Typography>
             <LinearProgress
               variant="buffer"
-              value={80}
+              value={100}
               valueBuffer={0}
             />
             <Typography
               variant="h6"
-              sx={{
-                fontFamily: 'Avenir',
-                color: 'white',
-                marginBottom: '1vh',
-                marginTop: '2vh',
-              }}
+              sx={skillTitleStyle}
             >
               AWS
             </Typography>
@@ -130,12 +143,7 @@ function skillsSection(): JSX.Element {
             />
             <Typography
               variant="h6"
-              sx={{
-                fontFamily: 'Avenir',
-                color: 'white',
-                marginBottom: '1vh',
-                marginTop: '2vh',
-              }}
+              sx={skillTitleStyle}
             >
               Express / Django REST
             </Typography>
@@ -148,120 +156,77 @@ function skillsSection(): JSX.Element {
           </Box>
           <Typography
             variant="h4"
-            sx={{
-              fontFamily: 'Avenir',
-              color: 'white',
-              marginBottom: '1vh',
-              marginTop: '2vh',
-            }}
+            sx={skillSectionTitleStyle}
           >
             Langages
           </Typography>
           <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'row',
-            }}
+            sx={languageSkillsContainerStyle}
           >
             <Box
-              sx={{
-                flexDirection: 'column',
-                width: '44%',
-                paddingLeft: '3%',
-                paddingRight: '3%',
-              }}
+              sx={languageSkillsColumnStyle}
             >
               <Typography
                 variant="h6"
-                sx={{
-                  fontFamily: 'Avenir',
-                  color: 'white',
-                  marginBottom: '1vh',
-                  marginTop: '2vh',
-                }}
+                sx={skillTitleStyle}
               >
                 TypeScript
               </Typography>
               <LinearProgress
                 variant="buffer"
-                value={80}
+                value={100}
                 valueBuffer={0}
-                sx={{
-                  width: '100%',
-                }}
+                sx={languageSkillLinearProgressStyle}
               />
               <Typography
                 variant="h6"
-                sx={{
-                  fontFamily: 'Avenir',
-                  color: 'white',
-                  marginBottom: '1vh',
-                  marginTop: '2vh',
-                }}
+                sx={skillTitleStyle}
               >
                 Golang
               </Typography>
               <LinearProgress
                 variant="buffer"
-                value={80}
+                value={30}
                 valueBuffer={0}
-                sx={{
-                  width: '100%',
-                }}
+                sx={languageSkillLinearProgressStyle}
                 color="secondary"
               />
             </Box>
             <Box
-              sx={{
-                flexDirection: 'column',
-                width: '44%',
-                paddingLeft: '3%',
-                paddingRight: '3%',
-              }}
+              sx={languageSkillsColumnStyle}
             >
               <Typography
                 variant="h6"
-                sx={{
-                  fontFamily: 'Avenir',
-                  color: 'white',
-                  marginBottom: '1vh',
-                  marginTop: '2vh',
-                }}
+                sx={skillTitleStyle}
               >
                 Java
               </Typography>
               <LinearProgress
                 variant="buffer"
-                value={80}
+                value={50}
                 valueBuffer={0}
-                sx={{
-                  width: '100%',
-                }}
+                sx={languageSkillLinearProgressStyle}
                 color="secondary"
               />
               <Typography
                 variant="h6"
-                sx={{
-                  fontFamily: 'Avenir',
-                  color: 'white',
-                  marginBottom: '1vh',
-                  marginTop: '2vh',
-                }}
+                sx={skillTitleStyle}
               >
                 C++
               </Typography>
               <LinearProgress
                 variant="buffer"
-                value={80}
+                value={25}
                 valueBuffer={0}
-                sx={{
-                  width: '100%',
-                }}
+                sx={languageSkillLinearProgressStyle}
                 color="secondary"
               />
             </Box>
           </Box>
         </Box>
+        <Typography sx={detailsStyle}>
+          *Relatives à mon expérience maximale avec React Typescript
+        </Typography>
       </Box>
     </Fade>
   );
