@@ -12,6 +12,16 @@ export const mainContentStyle: Record<string, string> = {
   flexDirection: 'row',
 };
 
+export const mainTitleContainer: Record<string, string> = {
+  marginTop: '7vh',
+  marginLeft: '5vw',
+};
+
+export const mainTitleStyle: Record<string, string> = {
+  fontFamily: 'Avenir',
+  fontWeight: 'bold',
+};
+
 export const photoBoxStyle: Record<string, Record<string, string>|string> = {
   display: { xs: 'none', lg: 'block' },
   width: '60vh',
@@ -39,4 +49,5 @@ export const listItemTextStyle: Record<string, string> = {
   fontFamily: 'Avenir',
 };
 
+export const mainTitleVariant: TitleType = 'h2';
 export const mainTextVariant: TitleType = 'h6';

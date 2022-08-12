@@ -29,13 +29,15 @@ import {
 } from '../assets/data/skillsSectionData';
 import ColorPalette from '../styles/colorPalette';
 
+const sectionTitle: string = 'Skills';
+
 function skillsSection(): JSX.Element {
   return (
     <Fade
       in
       timeout={fadeInDuration}
     >
-      <Box sx={sectionContainerStyle} id="Skills">
+      <Box sx={sectionContainerStyle} id={sectionTitle}>
         <Box sx={mainContainerStyle}>
           <Typography
             variant={titleVariant.main}
@@ -45,7 +47,7 @@ function skillsSection(): JSX.Element {
           </Typography>
           {
             skills.map((skillSection) => (
-              <Box>
+              <Box key={skillSection.title}>
                 {skillSection.title && (
                   <Typography
                     variant={titleVariant.section}
@@ -56,10 +58,15 @@ function skillsSection(): JSX.Element {
                 )}
                 <Box sx={generalFrameworkSkillsContainerStyles}>
                   {skillSection.content.map((skill) => (
-                    <Box>
+                    <Box key={skill.name}>
                       <Typography
                         variant={titleVariant.skill}
-                        sx={[skillTitleStyle, { color: skill.color === 'primary' ? ColorPalette.red : ColorPalette.pink }]}
+                        sx={[skillTitleStyle,
+                          {
+                            color: skill.color === 'primary'
+                              ? ColorPalette.red
+                              : ColorPalette.pink,
+                          }]}
                       >
                         {skill.name}
                       </Typography>
@@ -87,12 +94,20 @@ function skillsSection(): JSX.Element {
             {languageSkills.content.map((languageSkillsSection) => (
               <Box
                 sx={languageSkillsColumnStyle}
+                key={languageSkillsSection[0].value}
               >
                 {languageSkillsSection.map((languageSkill) => (
-                  <Box>
+                  <Box key={languageSkill.name}>
                     <Typography
                       variant={titleVariant.skill}
-                      sx={[skillTitleStyle, { color: languageSkill.color === 'primary' ? ColorPalette.red : ColorPalette.pink }]}
+                      sx={[
+                        skillTitleStyle,
+                        {
+                          color:
+                            languageSkill.color === 'primary'
+                              ? ColorPalette.red
+                              : ColorPalette.pink,
+                        }]}
                     >
                       {languageSkill.name}
                     </Typography>

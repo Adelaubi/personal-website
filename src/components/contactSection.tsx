@@ -13,9 +13,11 @@ import {
   links,
 } from '../assets/data/contactSectionData';
 
+const sectionTitle: string = 'Contacts';
+
 function ContactSection(): JSX.Element {
   return (
-    <Box sx={mainContainerStyle} id="Contacts">
+    <Box sx={mainContainerStyle} id={sectionTitle}>
       <Box sx={linksContainerStyle}>
         {
           links.map((link) => (
@@ -23,6 +25,7 @@ function ContactSection(): JSX.Element {
               href={link.src}
               variant={linkTitleVariant}
               sx={linkStyle}
+              key={link.src}
             >
               {link.icon}
             </Link>

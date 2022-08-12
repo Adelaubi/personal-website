@@ -30,13 +30,15 @@ import {
   taskTitle,
 } from '../assets/data/experienceProjectSectionData';
 
+const sectionTitle: string = 'Expériences';
+
 function ExperienceProjectSection(): JSX.Element {
   return (
     <Fade
       in
       timeout={fadeInDuration}
     >
-      <Box sx={mainContainerStyle} id="Expériences">
+      <Box sx={mainContainerStyle} id={sectionTitle}>
         <Typography
           variant={titleVariant.main}
           sx={mainTitleStyle}

@@ -16,6 +16,7 @@ import {
   ownerNameVariant,
   ownerNameStyle,
   buttonStyle,
+  buttonLinkStyle,
 } from '../styles/headerStyles';
 
 function Header(): JSX.Element {
@@ -32,7 +33,7 @@ function Header(): JSX.Element {
           {ownerName}
         </Typography>
         {buttonLabels.map((buttonLabel) => (
-          <a href={`#${buttonLabel}`} style={{ textDecoration: 'none' }}>
+          <a href={`#${buttonLabel}`} style={buttonLinkStyle} key={buttonLabel}>
             <Button sx={buttonStyle}>
               {buttonLabel}
             </Button>

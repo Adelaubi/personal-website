@@ -26,3 +26,7 @@ export const buttonStyle: Record<string, string | Record<string, string>> = {
   },
   fontFamily: 'Avenir',
 };
+
+export const buttonLinkStyle: Record<string, string> = {
+  textDecoration: 'none',
+};

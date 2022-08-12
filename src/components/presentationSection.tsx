@@ -12,12 +12,16 @@ import {
 import profilPhoto from '../assets/photo/profil.jpg';
 import {
   mainBoxStyle,
+  mainContentStyle,
+  mainTitleContainer,
+  mainTitleStyle,
   photoBoxStyle,
   photoStyle,
   descriptionBoxStyle,
   mainTextStyle,
   listItemTextStyle,
-  mainTextVariant, mainContentStyle,
+  mainTitleVariant,
+  mainTextVariant,
 } from '../styles/presentationSectionStyles';
 import {
   mainText,
@@ -26,16 +30,18 @@ import {
   fadeInDuration,
 } from '../assets/data/presentationSectionData';
 
+const sectionTitle = 'Présentation';
+
 function PresentationSection(): JSX.Element {
   return (
     <Fade
       in
       timeout={fadeInDuration}
     >
-      <Box sx={mainBoxStyle} id="Présentation">
-        <Box sx={{ marginTop: '7vh', marginLeft: '5vw' }}>
-          <Typography variant="h2" sx={{ fontFamily: 'Avenir', fontWeight: 'bold' }}>
-            Présentation
+      <Box sx={mainBoxStyle} id={sectionTitle}>
+        <Box sx={mainTitleContainer}>
+          <Typography variant={mainTitleVariant} sx={mainTitleStyle}>
+            {sectionTitle}
           </Typography>
         </Box>
         <Box sx={mainContentStyle}>
