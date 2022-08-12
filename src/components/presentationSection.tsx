@@ -30,7 +30,7 @@ import {
   fadeInDuration,
 } from '../assets/data/presentationSectionData';
 
-const sectionTitle = 'Présentation';
+const sectionTitle = 'À propos';
 
 function PresentationSection(): JSX.Element {
   return (

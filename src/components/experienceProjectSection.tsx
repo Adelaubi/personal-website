@@ -30,7 +30,7 @@ import {
   taskTitle,
 } from '../assets/data/experienceProjectSectionData';
 
-const sectionTitle: string = 'Expériences';
+const sectionTitle: string = 'Projets';
 
 function ExperienceProjectSection(): JSX.Element {
   return (

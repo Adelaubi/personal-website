@@ -9,7 +9,7 @@ import {
 } from '@mui/icons-material';
 import { experienceType } from '../../types/experienceProjectSectionTypes';
 
-export const mainTitle = 'Expériences';
+export const mainTitle = 'Projets';
 export const taskTitle = 'Tâches réalisées :';
 
 export const experiences: Array<experienceType> = [{

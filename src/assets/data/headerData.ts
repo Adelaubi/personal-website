@@ -1,8 +1,8 @@
 export const ownerName: string = 'Augustin de Laubier';
 
 export const buttonLabels: string[] = [
-  'Présentation',
+  'À propos',
   'Skills',
-  'Expériences',
+  'Projets',
   'Contacts',
 ];
